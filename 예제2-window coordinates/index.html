@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예제 2</title>
+    <style>
+      div {
+        width: 120px;
+        height: 120px;
+        background-color: skyblue;
+        margin-left: 5px;
+        margin-bottom: 10px;
+      }
+      .special {
+        background-color: steelblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="special"></div>
+    <div></div>
+    <script>
+      function clientCoordinates(event) {
+        const special = document.querySelector(".special");
+        const value = special.getBoundingClientRect();
+        console.log(value);
+        console.log(`
+          client: ${event.clientX}, ${event.clientY}
+          page: ${event.pageX}, ${event.pageY}
+
+          `);
+      }
+      window.addEventListener("click", clientCoordinates);
+    </script>
+  </body>
+</html>
