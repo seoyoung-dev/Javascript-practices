@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예제 3 - 윈도우 scrolling APIs</title>
+    <style>
+      .boxs div {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+        margin-left: 5px;
+        margin-bottom: 10px;
+      }
+
+      #special {
+        background-color: steelblue;
+      }
+
+      .btns {
+        position: fixed;
+        right: 10px;
+        top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxs">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div id="special"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="btns">
+      <button>Scroll by 100px</button>
+      <button>Scroll to 100px</button>
+      <button>Scroll into special</button>
+    </div>
+    <script>
+      const ScrollBy100px = document.querySelector("button:first-child");
+      const ScrollTo100px = document.querySelector("button:nth-child(2)");
+      const ScrollIntoSpecial = document.querySelector("button:last-child");
+
+      ScrollBy100px.addEventListener("click", () => {
+        window.scrollBy(0, 100);
+        // window.scroolBy({top: 100, left:0, behavior: 'smooth'})
+        // object 형식으로 property를 설정할 수 있음
+      });
+      ScrollTo100px.addEventListener("click", () => {
+        window.scrollTo(0, 100);
+      });
+      ScrollIntoSpecial.addEventListener("click", () => {
+        document.getElementById("special").scrollIntoView(true);
+      });
+    </script>
+  </body>
+</html>
