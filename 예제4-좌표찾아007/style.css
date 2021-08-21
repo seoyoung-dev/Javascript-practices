@@ -1,0 +1,35 @@
+body {
+  background-color: black;
+}
+
+img {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  /* parent 값이 없기 때문에 body가 기준이 됨 */
+  top: 50%;
+  left: 50%;
+}
+
+.vt {
+  width: 1px;
+  height: 100%;
+  background-color: white;
+}
+
+.hl {
+  height: 1px;
+  width: 100%;
+  background-color: white;
+}
+
+.coordinates {
+  position: absolute;
+  /* transform: translate(50%, 50%); */
+  /* top: 50%;
+  left: 50%; */
+  /* padding값이 아니라 transform translate로 하는 더 반응형에 가까움*/
+  padding-left: 30px;
+  padding-top: 30px;
+  color: white;
+  font-size: 20px;
+}
