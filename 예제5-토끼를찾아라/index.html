@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll</title>
+    <style>
+      body {
+        background-color: black;
+        /* flexbox를 사용할 수도 있지만 text-align으로 한 줄로 처리 가능 */
+        text-align: center;
+      }
+
+      button {
+        margin: 30px 0px;
+        padding: 5px;
+        background-color: rgb(212, 99, 99);
+        color: white;
+        outline: none;
+        /* 버튼 위에 hover 됐을 때 커서를 변경 가능 */
+        cursor: pointer;
+      }
+
+      img {
+        display: block;
+        width: 100px;
+        /* margin을 브라우저에서 나눠줌. 주로 중앙정렬 할 때 사용 */
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Find a rabbit</button>
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/rabbit.png" id="rabbit" alt="this is rabbit" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+    <img src="img/carrot.png" alt="carrot" />
+
+    <script>
+      const find = document.querySelector("button");
+      const rabbit = document.getElementById("rabbit");
+
+      find.addEventListener("click", () => {
+        rabbit.scrollIntoView({ block: "center", behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>
